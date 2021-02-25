@@ -29,6 +29,12 @@ console.log(galleryList);
 
 
 const imgList = images.map(img => { 
-    
+ 
+ const tagImg =  galleryList.insertAdjacentHTML('beforeEnd', `<li><img src="${img.url}" alt="${img.alt}"></li>`);
+ 
+  galleryList.setAttribute("style", "list-style-type:none; width:270px; display: flex;");
+  
+  return tagImg;
 
 });
+console.log(tagImg);
