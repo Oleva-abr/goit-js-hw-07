@@ -25,21 +25,25 @@ const images = [
 ];
 
 let galleryList = document.querySelector('#gallery');
-console.log(galleryList);
 
-
-const imgList = images.map(el => { 
- 
- const tagImg =  galleryList.insertAdjacentHTML('beforeEnd', `<li><img src="${el.url}" alt="${el.alt} " width= "270px" ;" height= "150px"></li>`); /* Сработало только так/*
-  galleryList.setAttribute("style", "list-style:none;  display: flex;");
-
-  // galleryList.lastElementChild.setAttribute("style", "width: 270px;  "); не работает, как ожидалось
-
+const makeGallery = ({ url, alt }) => {
+  const tagImg = galleryList.insertAdjacentHTML('beforeEnd', `<li><img src="${url}" alt="${alt}  " ></li>`);
   return tagImg;
+  
+};
+ 
+const imgList = images.map(makeGallery).join('');
 
-});
+// const imgList = images.map(makeGallery);
+// console.log(galleryList);
 
-// const img = document.querySelectorAll("img") тоже не работает
-// img.style.width = "270px";
-// img.setAttribute("style", "width: 270px;  ")
-console.log(galleryList);
+// const imgList = images.map(el => { 
+ 
+//  const tagImg =  galleryList.insertAdjacentHTML('beforeEnd', `<li><img src="${el.url}" alt="${el.alt} " ></li>`);
+  
+
+//     return tagImg;
+
+//  });
+
+

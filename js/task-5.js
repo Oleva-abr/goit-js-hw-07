@@ -5,5 +5,7 @@
 const nameInput = document.querySelector('#name-input');
 const nameOutput = document.querySelector('#name-output');
 
-nameInput.oninput = () => (nameInput.value == '') ?  nameOutput.innerHTML = 'незнакомец': nameOutput.innerHTML = nameInput.value;
+// nameInput.oninput = () => (nameInput.value === '') ?  nameOutput.innerHTML = 'незнакомец': nameOutput.innerHTML ;
+    
+nameInput.oninput = () => nameOutput.innerHTML =nameInput.value === '' ?   'незнакомец': nameInput.value ;
     

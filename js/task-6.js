@@ -25,12 +25,25 @@ inputVal.oninput = function() {
   if (inputVal.value.length === intTotallenght) {
     inputVal.classList.remove("invalid");
     inputVal.classList.add("valid");
-  }
-  if (inputVal.value.length === 0) {
-    inputVal.classList.remove("valid");
-    inputVal.classList.remove("invalid");
-  }
-  if (inputVal.value.length !== intTotallenght && inputVal.value.length !== 0) {
+  } else {
+      inputVal.classList.remove("valid");
     inputVal.classList.add("invalid");
   }
+
+  if (inputVal.value.length === 0) { //убрала  условие если не равно нулю, так как , тогда выполняються предыдущие условия
+    inputVal.classList.remove("valid");
+    inputVal.classList.remove("invalid");
+    }
 };
+ 
+
+// && inputVal.value.length !== 0)
+  //  if (inputVal.value.length !== 0 ) {
+  //   inputVal.classList.add("invalid");
+  //   inputVal.classList.remove("valid");
+  // }
+
+  //  if (inputVal.value.length !== intTotallenght ) {
+  //   inputVal.classList.add("invalid");
+  //   inputVal.classList.remove("valid");
+  // }
