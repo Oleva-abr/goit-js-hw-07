@@ -21,7 +21,7 @@ let inputVal = document.getElementById("validation-input");
 let totalLenght = inputVal.getAttribute("data-length");
 let intTotallenght = parseInt(totalLenght);
 
-inputVal.oninput = function() {
+inputVal.onblur = function() {
   if (inputVal.value.length === intTotallenght) {
     inputVal.classList.remove("invalid");
     inputVal.classList.add("valid");

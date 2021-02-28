@@ -27,12 +27,26 @@ const images = [
 let galleryList = document.querySelector('#gallery');
 
 const makeGallery = ({ url, alt }) => {
-  const tagImg = galleryList.insertAdjacentHTML('beforeEnd', `<li><img src="${url}" alt="${alt}  " ></li>`);
-  return tagImg;
+  return `<li><img src="${url}" alt="${alt} "></li>`;
   
 };
- 
 const imgList = images.map(makeGallery).join('');
+
+
+galleryList = galleryList.insertAdjacentHTML('beforeEnd', imgList);
+
+
+// const makeGallery = ({ url, alt }) => {
+//   const tagImg = galleryList.insertAdjacentHTML('beforeEnd', `<li><img src="${url}" alt="${alt}  " ></li>`);
+//   return tagImg;
+  
+// };
+ 
+// const imgList = images.map(makeGallery).join('');
+
+
+
+
 
 // const imgList = images.map(makeGallery);
 // console.log(galleryList);
